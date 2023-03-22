@@ -12,5 +12,22 @@ const tutorials = [
 ];
 
 const titleCased = () => {
+
+  const newTutorials = tutorials.map((tutorial) =>
+    {
+      const wordsArray = tutorial.split(" ")
+      let tString = ""
+      function capitalize1stLtr(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+      for (const word of wordsArray) {
+        tString += `${capitalize1stLtr(word)} `;
+      }
+      return tString.slice(0, tString.length-1)
+    })
+    for (let i = 0; i < newTutorials.length; ++i) {
+      tutorials[i] = newTutorials[i]
+    }
   return tutorials
 }
